@@ -20,7 +20,7 @@ def encode(number):  # Takes a number, and adds 3 to each digit in the number!
     return encoded_number  # Return the encoded number back!
 
 # TODO: Add the Decode function!
-print("test")
+
 if __name__ == "__main__":
     
     """
