@@ -40,6 +40,7 @@ if __name__ == "__main__":
     """
     password = None  # Stores the password the user is planning to encrypt
     encrypted_password = None  # Stores the encrypted password of the user's password
+    decrypted_password = None # Stores the decrypted password of the user's password
     
     while True:  # Until the user chooses to exit the program...
     
@@ -84,7 +85,16 @@ if __name__ == "__main__":
     
         # TODO: Implement the Decode function!
         elif user_option == 2:  # If the user chooses to decode a stored password...
-            pass
+
+            if encrypted_password is None:  # If the user hasn't stored a password yet...
+                # Inform them off that!
+                print("You don't seem to have a encoded password stored to decode, try encoding a password first!\n")
+                continue  # Repeat the loop to allow the user to store a password
+
+            decrypted_password = decode(encrypted_password)  # Otherwise, decrypt the stored password
+
+            # Print out the encoded and decoded passwords to the user!
+            print(f"The encoded password is {encrypted_password}, and the original password is {decrypted_password}.\n")
     
         elif user_option == 3:  # If the user chooses to exit the program...
             break  # Exit the program loop
